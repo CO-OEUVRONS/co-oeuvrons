@@ -16052,6 +16052,6 @@ UPDATE `ps_shop_url`
 -- Mise à jour tables pour config locale
 --
 UPDATE `ps_configuration`
-  SET `value` = 'localhost' WHERE `ps_shop_url`.`id_configuration` = 229;
+  SET `value` = 'localhost' WHERE `ps_configuration`.`id_configuration` = 229;
 UPDATE `ps_configuration`
-  SET `value` = 'localhost' WHERE `ps_shop_url`.`id_configuration` = 230;
+  SET `value` = 'localhost' WHERE `ps_configuration`.`id_configuration` = 230;
