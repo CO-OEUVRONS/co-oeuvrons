@@ -34,3 +34,4 @@ admin-dev/import/
 download/
 /img/*
 upload/
+var/cache/prod/cacert.pem
