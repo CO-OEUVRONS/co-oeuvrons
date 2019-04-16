@@ -21,7 +21,7 @@
     background: var(--ColorBrown);
 }
 
-.product-miniature .product-flags .new {
+#products .product-miniature .product-flags .new, .featured-products .product-miniature .product-flags .new, .product-accessories .product-miniature .product-flags .new, .product-miniature .product-miniature .product-flags .new {
     z-index: 2;
     background: var(--ColorGreen);
 }
