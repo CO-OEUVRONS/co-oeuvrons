@@ -21,7 +21,7 @@
     background: var(--ColorBrown);
 }
 
-#products .product-miniature .product-flags .new {
+.product-miniature .product-flags .new {
     z-index: 2;
     background: var(--ColorGreen);
 }
