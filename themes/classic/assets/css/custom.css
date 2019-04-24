@@ -4,7 +4,7 @@
  */
 
  /* Variable */
-:root {
+ :root {
     --ColorGreen: #C0DB9B;
     --ColorBlue: #8BAEAE;
     --ColorBrown: #B8A584;
@@ -21,7 +21,7 @@
     background: var(--ColorBrown);
 }
 
-#products .product-miniature .product-flags .new, .featured-products .product-miniature .product-flags .new, .product-accessories .product-miniature .product-flags .new, .product-miniature .product-miniature .product-flags .new {
+li.product-flag, #products .product-miniature .product-flags .new, .featured-products .product-miniature .product-flags .new, .product-accessories .product-miniature .product-flags .new, .product-miniature .product-miniature .product-flags .new {
     z-index: 2;
     background: var(--ColorGreen);
 }
@@ -33,6 +33,14 @@
 
 #header .top-menu a[data-depth="0"]:hover { 
     color: var(--ColorTurquoise);
+}
+
+#header .header-nav .cart-preview.active {
+    background: var(--ColorBlue);
+}
+
+#header .header-nav .cart-preview.active:hover {
+    background: var(--ColorBlueHover);
 }
 
 .search-widget form input[type=text]:focus {
@@ -73,6 +81,10 @@
 
 
 /* Product */
+.product-price {
+    color: var(--ColorBlue);
+}
+
 .has-discount .discount {
     background: var(--ColorBrown);
 }
@@ -106,3 +118,4 @@
 .form-control:focus, .input-group.focus {
     outline: .1875rem solid var(--ColorBlue);
 }
+
