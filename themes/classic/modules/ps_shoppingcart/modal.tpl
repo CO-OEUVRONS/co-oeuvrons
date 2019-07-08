@@ -62,13 +62,29 @@
               	<p><strong>{$cart.subtotals.tax.label}</strong>&nbsp;{$cart.subtotals.tax.value}</p>
               {/if}
               <p><strong>{l s='Total:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.totals.total.value} {$cart.labels.tax_short}</p>
+              {if $product.category != "hebergement"}
               <div class="cart-content-btn">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{l s='Continue shopping' d='Shop.Theme.Actions'}</button>
                 <a href="{$cart_url}" class="btn btn-primary"><i class="material-icons rtl-no-flip">&#xE876;</i>{l s='Proceed to checkout' d='Shop.Theme.Actions'}</a>
               </div>
+              {/if}
             </div>
           </div>
         </div>
+        {if $product.category == "hebergement"}
+        <div class="row choixPanierRow" style="margin-top:50px;">
+          <h2 class="choixPanierRow_title">Sélection d'un panier garnis</h2>
+          <p class="choixPanierRow_subtitle">Profitez d'un panier directement livré dans votre logement à partir de 20€ !</p>
+          <p class="choixPanierRow_subtitle">{$panierGarnisList|@count}</p>
+          {foreach from=$products item="product"}
+            {include file="catalog/_partials/miniatures/product.tpl" product=$product}
+          {/foreach}
+        </div>
+        <div class="cart-content-btn">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Sans Panier</button>
+          <a href="{$cart_url}" class="btn btn-primary"><i class="material-icons rtl-no-flip">&#xE876;</i>{l s='Proceed to checkout' d='Shop.Theme.Actions'}</a>
+        </div>
+        {/if}
       </div>
     </div>
   </div>

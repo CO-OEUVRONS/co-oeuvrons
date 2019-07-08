@@ -109,8 +109,13 @@ class Ps_Shoppingcart extends Module implements WidgetInterface
             }
         }
 
+        $category = new Category('11', (int)Context::getContext()->language->id);
+        $nb = 10000;
+        $panierGarnisList = $category->getProducts((int)Context::getContext()->language->id, 1, ($nb ? $nb : 10));
+        
         $this->smarty->assign(array(
             'product' => $product,
+            'panierGarnisList' => $panierGarnisList,
             'cart' => $data,
             'cart_url' => $this->getCartSummaryURL(),
         ));
