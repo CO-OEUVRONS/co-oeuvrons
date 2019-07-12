@@ -5,14 +5,14 @@
 
  /* Variable */
  :root {
-    --ColorGreen: #C0DB9B;
-    --ColorBlue: #8BAEAE;
-    --ColorBrown: #B8A584;
-    --ColorTurquoise: #69A598;
-    --ColorGreenHover: #9AB672;
-    --ColorBlueHover: #699797;
-    --ColorBrownHover: #A7926F;
-    --ColorTurquoiseHover: #558F82;
+    --ColorGreen: #9AB672;
+    --ColorBlue: #699797;
+    --ColorBrown: #A7926F;
+    --ColorTurquoise: #558F82;
+    --ColorGreenHover: #C0DB9B;
+    --ColorBlueHover: #8BAEAE;
+    --ColorBrownHover: #B8A584;
+    --ColorTurquoiseHover: #69A598;
 }
 
 /* Global */
@@ -119,3 +119,14 @@ li.product-flag, #products .product-miniature .product-flags .new, .featured-pro
     outline: .1875rem solid var(--ColorBlue);
 }
 
+
+
+/* Hebergement Dialog : Choix d'un panier */
+
+.choixPanierRow {
+    padding-top: 10px;
+}
+
+.choixPanierRow_title, .choixPanierRow_subtitle {
+    text-align: center;
+}
