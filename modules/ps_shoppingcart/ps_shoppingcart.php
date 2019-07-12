@@ -111,7 +111,35 @@ class Ps_Shoppingcart extends Module implements WidgetInterface
 
         $category = new Category('11', (int)Context::getContext()->language->id);
         $nb = 10000;
-        $panierGarnisList = $category->getProducts((int)Context::getContext()->language->id, 1, ($nb ? $nb : 10));
+        $panierGarnisListTemp = $category->getProducts((int)Context::getContext()->language->id, 1, ($nb ? $nb : 10));
+        $panierGarnisList = [];
+        /* Edition od panier */
+        foreach ($panierGarnisListTemp as $panier){
+            /* Research image of panier */
+            if (!is_array($panier['link_rewrite'])) {
+                $linkRewrite = $panier['link_rewrite'];
+            } else {
+                $linkRewrite = $panier['link_rewrite'][$id_lang ? $id_lang : key($panier['link_rewrite'])];
+            }
+            $cover = Product::getCover($panier['id_product']);
+            $panier['image'] = Context::getContext()->link->getImageLink($linkRewrite, $cover ? $cover['id_image'] : '', 'home_default');
+
+            $title = "";
+            $packItems = $panier['packItems'];
+
+            /* Edit Title for show composition of panier on hover the div */
+            for ($i = 0; $i < count($packItems); $i++) {
+                $title = $title . ($title != "" ? " | " : "");
+                $title = $title . $packItems[$i]['name'] . " : " . $packItems[$i]['pack_quantity'];
+            }
+
+            /* Edit Div Id and set Title of panier */
+            $panier['divId'] = 'card_panier_'.$panier['reference'];
+            $panier['title'] = $title;
+
+
+            array_push($panierGarnisList, $panier);
+        }
         
         $this->smarty->assign(array(
             'product' => $product,
