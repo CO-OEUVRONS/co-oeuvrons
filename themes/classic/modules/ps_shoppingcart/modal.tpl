@@ -62,13 +62,44 @@
               	<p><strong>{$cart.subtotals.tax.label}</strong>&nbsp;{$cart.subtotals.tax.value}</p>
               {/if}
               <p><strong>{l s='Total:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.totals.total.value} {$cart.labels.tax_short}</p>
+              {if $product.category != "hebergement"}
               <div class="cart-content-btn">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{l s='Continue shopping' d='Shop.Theme.Actions'}</button>
                 <a href="{$cart_url}" class="btn btn-primary"><i class="material-icons rtl-no-flip">&#xE876;</i>{l s='Proceed to checkout' d='Shop.Theme.Actions'}</a>
               </div>
+              {/if}
             </div>
           </div>
         </div>
+        {if $product.category == "hebergement"}
+        <div class="row choixPanierRow" style="margin-top:50px;">
+          <h2 class="choixPanierRow_title">Sélection d'un panier garnis</h2>
+          <p class="choixPanierRow_subtitle">Profitez d'un panier directement livré dans votre logement à partir de 20€ !</p>
+          <div id="listPanierGarnis">
+          {foreach from=$panierGarnisList item="panier"}
+            <div class="card_panier" id="{$panier.divId}">
+              <a onclick="aClickList({$panier.divId}, {$panier.id_product})" title="{$panier.title}" >
+                <img class="panier-image" src="{$panier.image}" itemprop="image">
+                <span class="panier-name"><strong>{$panier.name}</strong><span>
+                <span class="panier-price">{$panier.price} €</span>
+              </a>
+            </div>
+          {/foreach}
+          </div>
+        </div>
+        <div class="cart-content-btn">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Sans Panier</button>
+          <form action="https://localhost/co-oeuvrons/index.php?controller=cart" method="post" id="add-to-cart-or-refresh">
+            <input type="hidden" name="token">
+            <input type="hidden" name="id_product" id="product_page_product_id">
+            <div class="add">
+            <button class="btn btn-primary add-to-cart" data-button-action="add-to-cart" type="submit">
+              <i class="material-icons rtl-no-flip">&#xE876;</i>
+              {l s='Proceed to checkout' d='Shop.Theme.Actions'}
+            </button>
+          </form>
+        </div>
+        {/if}
       </div>
     </div>
   </div>

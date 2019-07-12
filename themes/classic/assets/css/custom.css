@@ -130,3 +130,55 @@ li.product-flag, #products .product-miniature .product-flags .new, .featured-pro
 .choixPanierRow_title, .choixPanierRow_subtitle {
     text-align: center;
 }
+
+.cart-content-btn {
+    position: absolute;
+    right: 20px;
+}
+
+.card_panier {
+    background:white;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 20px;
+    width: 220px;
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+}
+
+.card_panier .panier-name{
+    padding: 5px;
+    display:block;
+    text-align: center;
+}
+
+.card_panier .panier-image {
+    width: 180px;
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.card_panier .panier-price {
+    color: grey;
+    text-align: center;
+}
+
+#listPanierGarnis {
+    position: relative;
+    text-align: center;
+    overflow: auto;
+    margin-bottom:20px;
+}
+
+#listPanierGarnis{
+    min-height: 240px;
+    margin-top: 5px;
+}
+
+#listPanierGarnis .selected{
+    border: 3px solid var(--ColorBlue);
+}
+
+#add-to-cart-or-refresh {
+    display: inline-block;
+}
