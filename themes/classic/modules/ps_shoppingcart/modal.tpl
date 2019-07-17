@@ -89,11 +89,11 @@
         </div>
         <div class="cart-content-btn">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Sans Panier</button>
-          <form action="https://localhost/co-oeuvrons/index.php?controller=cart" method="post" id="add-to-cart-or-refresh">
+          <form action="{$addPanierURL}" method="post" id="add-to-cart-or-refresh">
             <input type="hidden" name="token">
             <input type="hidden" name="id_product" id="product_page_product_id">
             <div class="add">
-            <button class="btn btn-primary add-to-cart" data-button-action="add-to-cart" type="submit">
+            <button class="btn btn-primary add-to-cart"  id="addPanierBtn" disabled data-button-action="add-to-cart" data-dismiss="modal" type="submit">
               <i class="material-icons rtl-no-flip">&#xE876;</i>
               {l s='Proceed to checkout' d='Shop.Theme.Actions'}
             </button>
