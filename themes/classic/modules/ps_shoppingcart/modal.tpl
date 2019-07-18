@@ -90,7 +90,7 @@
         <div class="cart-content-btn">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Sans Panier</button>
           <form action="{$addPanierURL}" method="post" id="add-to-cart-or-refresh">
-            <input type="hidden" name="token">
+            <input type="hidden" name="token" value="{$token}">
             <input type="hidden" name="id_product" id="product_page_product_id">
             <div class="add">
             <button class="btn btn-primary add-to-cart"  id="addPanierBtn" disabled data-button-action="add-to-cart" data-dismiss="modal" type="submit">
