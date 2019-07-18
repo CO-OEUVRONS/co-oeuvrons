@@ -137,13 +137,14 @@ class Ps_Shoppingcart extends Module implements WidgetInterface
             $panier['divId'] = 'card_panier_'.$panier['reference'];
             $panier['title'] = $title;
 
-
             array_push($panierGarnisList, $panier);
         }
         
         $this->smarty->assign(array(
             'product' => $product,
             'panierGarnisList' => $panierGarnisList,
+            'addPanierURL' => __PS_BASE_URI__.'index.php?controller=cart',
+            'token' => Tools::getToken(false),
             'cart' => $data,
             'cart_url' => $this->getCartSummaryURL(),
         ));
