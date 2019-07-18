@@ -39,6 +39,7 @@ class hotelreservationsystem extends Module
             'Now you can be able to build your website for your hotels for their bookings and reservations by using
             this module.'
         );
+        
         $this->confirmUninstall = $this->l('Are you sure? All module data will be lost after uninstalling the module');
     }
 
